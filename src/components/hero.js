@@ -57,7 +57,8 @@ const Hero = () => {
           >
             কথা বলুন
           </a>
-          <div className="text-white absolute bg-black px-1 right-[538px] py-1 rounded-full border-3  border-white z-50">
+          {/* OR Section */}
+          <div className="text-white absolute bg-black px-1 py-1 rounded-full border-3 border-white z-50  flex items-center justify-center">
             OR
           </div>
           <a
@@ -70,7 +71,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-
     </section>
   );
 };
