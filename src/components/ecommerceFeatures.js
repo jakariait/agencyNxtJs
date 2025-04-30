@@ -21,7 +21,7 @@ const EcommerceFeatures = () => {
           পারফরম্যান্স, ইউজার এক্সপেরিয়েন্স আর কনভার্শনে আমরা সিরিয়াস।
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 items-stretch">
           {[
             {
               icon: <Rocket className="text-red-500 mb-4" size={40} />,
