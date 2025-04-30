@@ -60,6 +60,8 @@ const navItems = (isMobile = false) => {
     { name: "হোম", href: "/" },
     { name: "ই-কমার্স ওয়েবসাইট", href: "/" },
     { name: "ল্যান্ডিং পেজ", href: "/" },
+    { name: "ডিজিটাল মার্কেটিং", href: "/" },
+
     { name: "প্রাইসিং", href: "/" },
     { name: "আমাদের সম্পর্কে", href: "/" },
     { name: "যোগাযোগ", href: "/" },
