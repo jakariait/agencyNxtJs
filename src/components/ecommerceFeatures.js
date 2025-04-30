@@ -13,15 +13,15 @@ import {
 const EcommerceFeatures = () => {
   return (
     <section className="bg-black py-16 border-t border-red-500">
-      <div className="xl:container xl:mx-auto px-4 text-center">
+      <div className="xl:container xl:mx-auto px-4 text-center flex flex-col items-center justify-center ">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
           আমাদের ই-কমার্স সাইটের ফিচারসমূহ
         </h2>
         <p className="text-gray-400 mb-12 text-lg">
-          শুধু ডিজাইন নয় — পারফরম্যান্স, ইউজার এক্সপেরিয়েন্স আর কনভার্শনে আমরা সিরিয়াস।
+          পারফরম্যান্স, ইউজার এক্সপেরিয়েন্স আর কনভার্শনে আমরা সিরিয়াস।
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-stretch">
           {[
             {
               icon: <Rocket className="text-red-500 mb-4" size={40} />,
@@ -56,7 +56,7 @@ const EcommerceFeatures = () => {
           ].map((feature, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl bg-gray-900 border border-gray-800 shadow hover:shadow-xl transition flex flex-col items-center text-center h-full"
+              className="p-2 md:p-6 rounded-xl bg-gray-900 border border-gray-800 shadow hover:shadow-xl transition flex flex-col items-center text-center h-full"
             >
               {feature.icon}
               <h3 className="text-xl font-semibold text-gray-100 mb-2">
