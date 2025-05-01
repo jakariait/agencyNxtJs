@@ -32,11 +32,11 @@ const WhyFunctionalEcommerce = () => {
   return (
     <section className="bg-black  py-16 border-t border-red-500">
       <div className="xl:container xl:mx-auto px-4 text-center flex flex-col items-center justify-center ">
-        <h1 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-lg font-semibold md:text-3xl mt-4 mb-8">
+        <h1 className=" inline-block text-gray-300  text-lg font-semibold md:text-3xl mt-4 mb-8">
           কেন ফাংশনাল ই-কমার্স ওয়েবসাইট এখন সময়ের দাবি?
         </h1>
 
-        <h1 className="bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 inline-block text-transparent bg-clip-text text-lg font-semibold md:text-xl mt-4 mb-8">
+        <h1 className="text-gray-300 text-lg font-semibold md:text-xl mt-4 mb-8">
           আপনার ই-কমার্স ওয়েবসাইট হতে হবে এমন যা
           দ্রুত লোড হয়, সহজে নেভিগেট করা যায়, দেখতে আকর্ষনীয়  এবং কাস্টমারকে অর্ডার করতে আগ্রহী
           করে তোলে।

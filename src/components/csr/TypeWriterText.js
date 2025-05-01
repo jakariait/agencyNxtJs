@@ -34,7 +34,7 @@ const TypeWriterText = () => {
 
   return (
     <div>
-      <h1 className="text-3xl md:text-5xl font-bold text-gray-200 mt-10 mb-4 h-45">
+      <h1 className="text-3xl md:text-5xl font-bold text-gray-300 mt-10 mb-4 h-45">
         আমরা তৈরি করি
         <br />
         <span className="text-red-500 mt-12  inline-block border-r-2 border-red-500 pr-2 animate-pulse">
