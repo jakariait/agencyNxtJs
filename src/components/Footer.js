@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import Link from "next/link";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -12,24 +12,12 @@ import {
 const Footer = () => {
   return (
     <div className="bg-black border-t pb-8 border-red-500 py-1 md:py-10 px-4">
-      <div
-        className={
-          "text-white md:hidden items-center flex justify-center text-2xl mb-4 "
-        }
-      >
-        <h1 className={"border-red-500 border-b-2 py-3"}>Contact Info</h1>
+      <div className="text-white md:hidden items-center flex justify-center text-2xl mb-4">
+        <h1 className="border-red-500 border-b-2 py-3">Contact Info</h1>
       </div>
 
-      <div
-        className={
-          "flex gap-6 xl:container xl:mx-auto justify-center md:justify-between "
-        }
-      >
-        <div
-          className={
-            "text-white  flex flex-col items-center justify-center gap-6 md:gap-3"
-          }
-        >
+      <div className="flex gap-6 xl:container xl:mx-auto justify-center md:justify-between">
+        <div className="text-white flex flex-col items-center justify-center gap-6 md:gap-3">
           <img
             src="/Topper-IT-Logo-149x74.png"
             alt="Brand Logo"
@@ -72,129 +60,135 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className={"hidden md:block"}>
+
+        {/* Services */}
+        <div className="hidden md:block">
           <h1 className="text-red-500 text-3xl mb-5">Service</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <a href="/" className="hover:text-red-400 transition">
+              <Link href="/" className="hover:text-red-400 transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/website-development"
                 className="hover:text-red-400 transition"
               >
                 Website Development
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/digital-marketing"
                 className="hover:text-red-400 transition"
               >
                 Digital Marketing Service
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/mobile-app-development"
                 className="hover:text-red-400 transition"
               >
                 Mobile Apps Development
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/domain-hosting"
                 className="hover:text-red-400 transition"
               >
                 Domain Hosting Service
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/graphics-design"
                 className="hover:text-red-400 transition"
               >
                 Graphics Design
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-        <div className={"hidden md:block"}>
+
+        {/* Quick Links */}
+        <div className="hidden md:block">
           <h1 className="text-red-500 text-3xl mb-5">Quick Link</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <a href="/" className="hover:text-red-400 transition">
+              <Link href="/" className="hover:text-red-400 transition">
                 Facebook Page
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/website-development"
                 className="hover:text-red-400 transition"
               >
                 Chat on Messenger
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/digital-marketing"
                 className="hover:text-red-400 transition"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/mobile-app-development"
                 className="hover:text-red-400 transition"
               >
                 Return Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/domain-hosting"
                 className="hover:text-red-400 transition"
               >
                 Support Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/graphics-design"
                 className="hover:text-red-400 transition"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-        <div className={"hidden md:block"}>
+
+        {/* Important Links */}
+        <div className="hidden md:block">
           <h1 className="text-red-500 text-3xl mb-5">Important Link</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <a href="/" className="hover:text-red-400 transition">
+              <Link href="/" className="hover:text-red-400 transition">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/website-development"
                 className="hover:text-red-400 transition"
               >
                 Conact
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/digital-marketing"
                 className="hover:text-red-400 transition"
               >
                 FAQ
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
