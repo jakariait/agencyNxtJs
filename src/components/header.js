@@ -9,7 +9,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-50">
+    <header className="bg-black fixed w-full z-100">
       <nav className="xl:container xl:mx-auto px-3 py-2 flex items-center justify-between relative">
         {/* Logo */}
         <div className="w-22 z-50">
@@ -33,13 +33,13 @@ const Header = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <ul className="md:flex items-center justify-end gap-6 font-bold hidden ">
+        <ul className="md:flex items-center justify-end gap-6 font-bold hidden text-white">
           {navItems()}
         </ul>
 
         {/* Mobile Navigation */}
         <ul
-          className={`md:hidden fixed top-14 right-0 w-full  bg-gray-50 z-40 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-black ${
+          className={`md:hidden fixed top-14 right-0 w-full  bg-gray-50 z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-black ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   Rocket,
@@ -8,6 +6,15 @@ import {
   Loader,
   TrendingUp,
   Search,
+  Server,
+  Package,
+  Boxes,
+  FileText,
+  MapPin,
+  MessageCircle,
+  CreditCard,
+  Gift,
+  Tag,
 } from "lucide-react";
 
 const EcommerceFeatures = () => {
@@ -53,6 +60,51 @@ const EcommerceFeatures = () => {
               title: "SEO ফ্রেন্ডলি স্ট্রাকচার",
               desc: "গুগলে র‍্যাঙ্ক করার জন্য প্রয়োজনীয় ট্যাগ, স্পিড, আর ক্লিন কোড সবই থাকবে।",
             },
+            {
+              icon: <Server className="text-red-500 mb-4" size={40} />,
+              title: "সার্ভার সাইট ট্র্যাকিং",
+              desc: "Facebook Conversion API সেটআপ থাকবে যাতে অ্যাড পারফরম্যান্স ঠিকমতো ট্র্যাক করা যায়।",
+            },
+            {
+              icon: <Package className="text-red-500 mb-4" size={40} />,
+              title: "এক ক্লিকে কুরিয়ার অর্ডার",
+              desc: "স্টিডফাস্ট, পাঠাও, বা অন্য কুরিয়ার — অর্ডার হওয়ার সাথে সাথেই এক ক্লিকে কুরিয়ারে বুকিং হয়ে যাবে।",
+            },
+            {
+              icon: <Boxes className="text-red-500 mb-4" size={40} />,
+              title: "অটোমেটেড স্টক ম্যানেজমেন্ট",
+              desc: "অর্ডার হলে অটোমেটিক স্টক কমে যাবে। কোন প্রোডাক্ট আউট অফ স্টক — সেটাও রিয়েল টাইমে দেখাবে।",
+            },
+            {
+              icon: <FileText className="text-red-500 mb-4" size={40} />,
+              title: "অ্যাডমিন ইনভয়েস ডাউনলোড",
+              desc: "অ্যাডমিন চাইলে যেকোনো অর্ডারের ইনভয়েস প্রিন্ট ও PDF আকারে ডাউনলোড করতে পারবেন, ট্র্যাকিংয়ের সুবিধার জন্য।",
+            },
+            {
+              icon: <MapPin className="text-red-500 mb-4" size={40} />,
+              title: "অর্ডার ট্র্যাকিং সিস্টেম",
+              desc: "কাস্টমার নিজের অর্ডার কোথায় আছে — সেটা রিয়েল টাইমে ট্র্যাক করতে পারবে ট্র্যাকিং আইডি দিয়ে।",
+            },
+            {
+              icon: <MessageCircle className="text-red-500 mb-4" size={40} />,
+              title: "SMS নোটিফিকেশন সিস্টেম",
+              desc: "অর্ডার কনফার্ম, শিপমেন্ট, বা ডেলিভারি — সব আপডেট কাস্টমার SMS এর মাধ্যমে রিয়েল টাইমে পাবে।",
+            },
+            {
+              icon: <CreditCard className="text-red-500 mb-4" size={40} />,
+              title: "পেমেন্ট গেটওয়ে ইন্টিগ্রেশন",
+              desc: "বিকাশ, নগদ, কার্ড, কিংবা ব্যাংক — সব মাধ্যমে কাস্টমার যেন সহজেই পেমেন্ট করতে পারে।",
+            },
+            {
+              icon: <Gift className="text-red-500 mb-4" size={40} />,
+              title: "রিওয়ার্ড পয়েন্ট সিস্টেম",
+              desc: "কাস্টমাররা তাদের কেনাকাটায় রিওয়ার্ড পয়েন্ট উপার্জন করতে পারবে, যা পরবর্তীতে ডিসকাউন্টে রিডিম করা যাবে।",
+            },
+            {
+              icon: <Tag className="text-red-500 mb-4" size={40} />, // Promo Code Icon
+              title: "প্রোমো কোড সিস্টেম",
+              desc: "কাস্টমাররা বিভিন্ন প্রোমো কোড ব্যবহার করে ডিসকাউন্ট পেতে পারবে, কেনাকাটায় বিশেষ ছাড়।",
+            },
           ].map((feature, idx) => (
             <div
               key={idx}
@@ -65,6 +117,28 @@ const EcommerceFeatures = () => {
               <p className="text-gray-400">{feature.desc}</p>
             </div>
           ))}
+        </div>
+        <div className={"flex items-center justify-center relative mt-9"}>
+          <a
+            href="tel:+8801234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-red-500 hover:bg-red-800 text-white font-semibold px-6 py-3 rounded-l-lg transition duration-300 w-36"
+          >
+            কথা বলুন
+          </a>
+          {/* OR Section */}
+          <div className="text-white absolute bg-black px-1 py-1 rounded-full border-3 border-white z-50  flex items-center justify-center">
+            OR
+          </div>
+          <a
+            href="https://wa.me/8801234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-green-600 hover:bg-green-800 text-white font-semibold px-6  py-3 rounded-r-lg transition duration-300 w-36"
+          >
+            WhatsApp
+          </a>
         </div>
       </div>
     </section>

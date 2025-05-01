@@ -34,7 +34,7 @@ const Hero = () => {
   }, [subIndex, index, deleting]);
 
   return (
-    <section className="bg-black py-10">
+    <section className="bg-black border-t border-red-500 py-10">
       <div className="xl:container xl:mx-auto px-4 text-center ">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-200 mb-4 h-45">
           আমরা তৈরি করি
