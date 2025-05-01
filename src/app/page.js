@@ -1,5 +1,5 @@
 import Header from "@/components/ssr/header";
-import Hero from "@/components/hero";
+import Hero from "@/components/ssr/hero";
 import WhyFunctionalEcommerce from "@/components/ssr/whyFunctionalEcommerce";
 import EcommerceFeatures from "@/components/ssr/ecommerceFeatures";
 import ServicesWeOffer from "@/components/ssr/ServicesWeOffer";

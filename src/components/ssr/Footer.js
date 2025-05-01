@@ -1,4 +1,3 @@
-
 import React from "react";
 import Link from "next/link";
 import {
@@ -15,14 +14,15 @@ const Footer = () => {
         <h1 className="border-red-500 border-b-2 py-3">Contact Info</h1>
       </div>
 
-      <div className="flex gap-6 xl:container xl:mx-auto justify-center md:justify-between">
-        <div className="text-white flex flex-col items-center justify-center gap-6 md:gap-3">
+      <div className="flex gap-6 xl:container xl:mx-auto justify-center lg:justify-between">
+        <div className="text-white flex flex-col items-center justify-center gap-3 ">
           <img
             src="/Topper-IT-Logo-149x74.png"
             alt="Brand Logo"
             className="w-32 mb-5 hidden md:block"
           />
-          <p>Pachbag, Gafargaon, Myemensing</p>
+          <p>Pachbag, Gafargaon </p>
+          <p>Mymensingh</p>
           <p>Helpline: 01743914693</p>
           <div className="flex gap-4">
             <a

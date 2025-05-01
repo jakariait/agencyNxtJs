@@ -7,7 +7,7 @@ const CopyWright = () => {
       <div className="text-center text-sm text-gray-400   pt-4">
         © {new Date().getFullYear()} All Rights Reserved. Design & Developed by{" "}
         <a
-          href="https://jakaria.dev"
+          href="https://portfolio-jakariaits-projects.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-red-500 hover:underline"

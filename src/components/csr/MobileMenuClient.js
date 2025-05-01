@@ -11,7 +11,7 @@ const MobileMenuClient = ({ links }) => {
     <>
       {/* Hamburger Icon */}
       <button
-        className="md:hidden text-red-500 z-50 cursor-pointer"
+        className="lg:hidden text-red-500 border-1  border-red-500 z-50 cursor-pointer"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X size={38} /> : <Menu size={38} />}
@@ -19,7 +19,7 @@ const MobileMenuClient = ({ links }) => {
 
       {/* Mobile Menu */}
       <ul
-        className={`md:hidden fixed top-14 right-0 w-full bg-gray-50 z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-black ${
+        className={`lg:hidden fixed top-14 right-0 w-full bg-gray-50 z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-black ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

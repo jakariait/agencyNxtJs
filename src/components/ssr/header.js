@@ -10,7 +10,6 @@ const links = [
   { name: "প্রাইসিং", href: "/" },
   { name: "আমাদের সম্পর্কে", href: "/" },
   { name: "যোগাযোগ", href: "/" },
-  { name: "ব্লগ", href: "/" },
 ];
 
 const HeaderServer = () => {
@@ -29,9 +28,11 @@ const HeaderServer = () => {
             />
           </Link>
         </div>
-
+        <h1 className={"text-gray-100 text-md font-semibold lg:hidden"}>
+          Welcome to Topper IT
+        </h1>
         {/* Desktop Menu */}
-        <ul className="md:flex items-center justify-end gap-6 font-bold hidden text-white">
+        <ul className="lg:flex items-center justify-end gap-6 font-bold hidden text-white">
           {links.map((link, i) => (
             <li className="relative group" key={i}>
               <Link href={link.href}>{link.name}</Link>
@@ -52,7 +53,7 @@ const HeaderServer = () => {
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <MobileMenuClient links={links}/>
+        <MobileMenuClient links={links} />
       </nav>
     </header>
   );
