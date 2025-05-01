@@ -1,10 +1,10 @@
-import Header from "@/components/header";
+import Header from "@/components/ssr/header";
 import Hero from "@/components/hero";
-import WhyFunctionalEcommerce from "@/components/whyFunctionalEcommerce";
-import EcommerceFeatures from "@/components/ecommerceFeatures";
-import ServicesWeOffer from "@/components/ServicesWeOffer";
-import Footer from "@/components/Footer";
-import CopyWright from "@/components/CopyWright";
+import WhyFunctionalEcommerce from "@/components/ssr/whyFunctionalEcommerce";
+import EcommerceFeatures from "@/components/ssr/ecommerceFeatures";
+import ServicesWeOffer from "@/components/ssr/ServicesWeOffer";
+import Footer from "@/components/ssr/Footer";
+import CopyWright from "@/components/ssr/CopyWright";
 
 export default function Home() {
   return (

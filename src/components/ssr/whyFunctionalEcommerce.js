@@ -1,5 +1,3 @@
-// "use client";
-
 import React from "react";
 import { Smile, Smartphone, TrendingUp,Zap } from "lucide-react";
 

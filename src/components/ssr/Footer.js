@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -66,7 +65,7 @@ const Footer = () => {
           <h1 className="text-red-500 text-3xl mb-5">Service</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <Link href="/" className="hover:text-red-400 transition">
+              <Link href="/public" className="hover:text-red-400 transition">
                 Home
               </Link>
             </li>
@@ -118,7 +117,7 @@ const Footer = () => {
           <h1 className="text-red-500 text-3xl mb-5">Quick Link</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <Link href="/" className="hover:text-red-400 transition">
+              <Link href="/public" className="hover:text-red-400 transition">
                 Facebook Page
               </Link>
             </li>
@@ -170,7 +169,7 @@ const Footer = () => {
           <h1 className="text-red-500 text-3xl mb-5">Important Link</h1>
           <ul className="text-gray-100 flex flex-col justify-center gap-3">
             <li>
-              <Link href="/" className="hover:text-red-400 transition">
+              <Link href="/public" className="hover:text-red-400 transition">
                 About Us
               </Link>
             </li>

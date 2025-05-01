@@ -1,49 +1,12 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
+import TypeWriterText from "@/components/csr/TypeWriterText";
 
 const Hero = () => {
-  const textArray = [
-    "ফাস্ট-লোডিং এবং কনভার্শন ফোকাসড ই-কমার্স ওয়েবসাইট",
-    "সেল বুস্টিং ল্যান্ডিং পেজ",
-    "সুপার ফাস্ট ও SEO ফ্রেন্ডলি ওয়েবসাইট",
-  ];
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    if (index === textArray.length) return;
-
-    if (subIndex === textArray[index].length + 1 && !deleting) {
-      setTimeout(() => setDeleting(true), 1000);
-    } else if (subIndex === 0 && deleting) {
-      setDeleting(false);
-      setIndex((prev) => (prev + 1) % textArray.length);
-    }
-
-    const timeout = setTimeout(
-      () => {
-        setSubIndex((prev) => (deleting ? prev - 1 : prev + 1));
-      },
-      deleting ? 50 : 100,
-    );
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, deleting]);
-
   return (
     <section className="bg-black border-t border-red-500 py-10">
       <div className="xl:container xl:mx-auto px-4 text-center ">
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-200 mb-4 h-45">
-          আমরা তৈরি করি
-          <br />
-          <span className="text-red-500 mt-12  inline-block border-r-2 border-red-500 pr-2 animate-pulse">
-            {textArray[index].substring(0, subIndex)}
-          </span>
-        </h1>
-
+        {/*TypeWriter Text Field*/}
+        <TypeWriterText />
         <h1 className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-lg font-semibold md:text-3xl mt-4 mb-8">
           ওয়েবসাইট যা দেখতে সুন্দর, ইউজ করতে সহজ আর সবচেয়ে বড় কথা – বিক্রি
           বাড়ায়। ফাস্ট লোডিং, SEO ফ্রেন্ডলি, আর ফাংশনাল ডিজাইনে আমরা পারদর্শী।
