@@ -2,6 +2,7 @@
 import React from "react";
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
+import FloatingShapes from "@/components/FloatingShapes";
 
 const ServiceSection = () => {
   const services = [
@@ -62,12 +63,8 @@ const ServiceSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-purple-300 via-blue-300 to-indigo-300 px-2 overflow-hidden py-20">
       {/* Floating geometric shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/20 rotate-45 animate-bounce animation-delay-0"></div>
-        <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-purple-300/30 rounded-full animate-bounce animation-delay-1000"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-8 h-8 bg-blue-300/20 rotate-12 animate-bounce animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-indigo-300/40 animate-bounce animation-delay-3000"></div>
-      </div>
+      <FloatingShapes />
+
 
       {/* Header */}
       <div className="max-w-6xl mx-auto text-center mb-16 relative z-10 px-4 sm:px-6 lg:px-8">
@@ -86,7 +83,7 @@ const ServiceSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fadeInUp cursor-pointer"
+            className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fadeInUp"
             style={{
               animationDelay: `${index * 150}ms`,
               animationFillMode: "forwards",

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, ChevronRight } from "lucide-react";
 import UpworkSection from "@/components/UpworkSection";
+import FloatingShapes from "@/components/FloatingShapes";
 
 export default function HeroSection() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -24,13 +25,7 @@ export default function HeroSection() {
 
   return (
     <div className="relative  bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
-      {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/20 rotate-45 animate-bounce"></div>
-        <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-purple-300/30 rounded-full animate-bounce animation-delay-1000"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-8 h-8 bg-blue-300/20 rotate-12 animate-bounce animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-indigo-300/40 animate-bounce animation-delay-3000"></div>
-      </div>
+      <FloatingShapes />
 
       <div className="relative z-10 xl:container xl:mx-auto px-4 pt-30 pb-15">
         <div className="flex flex-col lg:flex-row items-center ">

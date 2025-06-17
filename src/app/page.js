@@ -4,9 +4,8 @@ import EcommerceFeatures from "@/components/ssr/ecommerceFeatures";
 import Footer from "@/components/ssr/Footer";
 import CopyWright from "@/components/ssr/CopyWright";
 import HeroSection from "@/components/HeroSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import ServiceSection from "@/components/ServiceSection";
-import WhyChooseUs2 from "@/components/WhyChooseUs2";
+import ComparisonSection from "@/components/ComparisonSection";
 
 export default function Home() {
   return (
@@ -14,8 +13,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ServiceSection />
-      <WhyChooseUs2/>
-      <WhyChooseUs />
+      <ComparisonSection />
       <WhyFunctionalEcommerce />
       <EcommerceFeatures />
       <Footer />
