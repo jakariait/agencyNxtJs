@@ -3,14 +3,15 @@ import Image from "next/image";
 import MobileMenuClient from "@/components/csr/MobileMenuClient";
 
 const links = [
-  { name: "হোম", href: "/" },
-  { name: "ই-কমার্স ওয়েবসাইট", href: "/" },
-  { name: "ল্যান্ডিং পেজ", href: "/" },
-  { name: "ডিজিটাল মার্কেটিং", href: "/" },
-  { name: "প্রাইসিং", href: "/" },
-  { name: "আমাদের সম্পর্কে", href: "/" },
-  { name: "যোগাযোগ", href: "/" },
+  { name: "Home", href: "/" },
+  { name: "E-commerce Website", href: "/" },
+  { name: "Landing Page", href: "/" },
+  { name: "Digital Marketing", href: "/" },
+  { name: "Pricing", href: "/" },
+  { name: "About Us", href: "/" },
+  { name: "Contact", href: "/" },
 ];
+
 
 const HeaderServer = () => {
   return (

@@ -33,7 +33,7 @@ const WhyFunctionalEcommerce = () => {
     <section className="bg-black  py-16 border-t border-red-500">
       <div className="xl:container xl:mx-auto px-4 text-center flex flex-col items-center justify-center ">
         <h1 className=" inline-block text-gray-300  text-lg font-semibold md:text-3xl mt-4 mb-8">
-          কেন ফাংশনাল ই-কমার্স ওয়েবসাইট এখন সময়ের দাবি?
+          কেন আপনার ফাংশনাল ই-কমার্স ওয়েবসাইট এখন সময়ের দাবি?
         </h1>
 
         <h1 className="text-gray-300 text-lg font-semibold md:text-xl mt-4 mb-8">
