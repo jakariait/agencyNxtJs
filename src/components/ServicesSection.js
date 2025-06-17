@@ -123,7 +123,7 @@ export default function ServicesSection() {
               </div>
 
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">What's Included:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Wha`&apos;s Included:</h4>
                 <div className="space-y-3">
                   {services[activeService].features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -150,7 +150,7 @@ export default function ServicesSection() {
         <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
           <p className="text-xl mb-8 opacity-90">
-            Let's discuss how our services can help you achieve your goals.
+            Let`&apos;s discuss how our services can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">

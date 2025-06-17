@@ -180,8 +180,8 @@ export default function WhyChooseUs() {
           </h2>
 
           <p className="text-xl text-gray-600 leading-relaxed">
-            We don't just deliver projects – we deliver results that transform businesses.
-            Here's what makes us different from the rest.
+            We don`&apos;t just deliver projects – we deliver results that transform businesses.
+            Here`&apos;s what makes us different from the rest.
           </p>
         </div>
 
@@ -254,7 +254,7 @@ export default function WhyChooseUs() {
                   </div>
                   <h4 className="text-2xl font-bold mb-4">Ready to Experience the Difference?</h4>
                   <p className="mb-6 text-white/90">
-                    Join hundreds of successful businesses who've transformed their growth with our proven strategies.
+                    Join hundreds of successful businesses wh`&apos;ve transformed their growth with our proven strategies.
                   </p>
                   <button className="w-full bg-white text-purple-600 font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
                     Get Started Today
@@ -275,7 +275,7 @@ export default function WhyChooseUs() {
               What Our Clients Say
             </h3>
             <p className="text-lg text-gray-600">
-              Don't just take our word for it – hear from businesses we've helped grow
+              Don`&apos;t just take our word for it – hear from businesses we`&apos;ve helped grow
             </p>
           </div>
 
@@ -327,7 +327,7 @@ export default function WhyChooseUs() {
               Ready to Join Our Success Stories?
             </h3>
             <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-              Let's discuss how we can transform your business with our proven strategies and expert team.
+              Let`&apos;s discuss how we can transform your business with our proven strategies and expert team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-purple-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
