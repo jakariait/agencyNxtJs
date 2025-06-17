@@ -294,7 +294,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
 
                 <div className="flex items-center justify-between">
