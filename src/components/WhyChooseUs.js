@@ -180,8 +180,8 @@ export default function WhyChooseUs() {
           </h2>
 
           <p className="text-xl text-gray-600 leading-relaxed">
-            We don`&apos;t just deliver projects – we deliver results that transform businesses.
-            Here`&apos;s what makes us different from the rest.
+            We don&apos;t just deliver projects – we deliver results that transform businesses.
+            Here&apos;s what makes us different from the rest.
           </p>
         </div>
 
@@ -275,7 +275,7 @@ export default function WhyChooseUs() {
               What Our Clients Say
             </h3>
             <p className="text-lg text-gray-600">
-              Don`&apos;t just take our word for it – hear from businesses we`&apos;ve helped grow
+              Don&apos;t just take our word for it – hear from businesses we&apos;ve helped grow
             </p>
           </div>
 
@@ -327,7 +327,7 @@ export default function WhyChooseUs() {
               Ready to Join Our Success Stories?
             </h3>
             <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-              Let`&apos;s discuss how we can transform your business with our proven strategies and expert team.
+              Let&apos;s discuss how we can transform your business with our proven strategies and expert team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-purple-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
