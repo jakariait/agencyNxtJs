@@ -12,6 +12,7 @@ import WhyChooseUs2 from "@/components/WhyChooseUs";
 import React from "react";
 import TeamPreviewSection from "@/components/TeamPreviewSection";
 import ContactSection from "@/components/ContactSection";
+import ContactActions from "@/components/ContactActions";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Clients/>
       <TeamPreviewSection/>
       <ContactSection/>
+      <ContactActions/>
       {/*<WhyFunctionalEcommerce />*/}
       {/*<EcommerceFeatures />*/}
       {/*<Footer />*/}

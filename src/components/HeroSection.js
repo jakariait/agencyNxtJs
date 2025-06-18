@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Star, ChevronRight } from "lucide-react";
 import UpworkSection from "@/components/UpworkSection";
 import FloatingShapes from "@/components/FloatingShapes";
+import ContactActions from "@/components/ContactActions";
+import CallOrWhatsApp from "@/components/ssr/CallOrWhatsApp";
 
 export default function HeroSection() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -113,7 +115,12 @@ export default function HeroSection() {
             <UpworkSection />
           </div>
         </div>
+        <div className={"mt-10 -mb-5"}>
+          <CallOrWhatsApp/>
+        </div>
+
       </div>
+
     </div>
   );
 }

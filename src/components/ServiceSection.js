@@ -3,6 +3,7 @@ import React from "react";
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
 import FloatingShapes from "@/components/FloatingShapes";
+import CallOrWhatsApp from "@/components/ssr/CallOrWhatsApp";
 
 const ServiceSection = () => {
   const services = [
@@ -112,9 +113,13 @@ const ServiceSection = () => {
               Visit Service Page
             </Link>
           </div>
-        ))}
-      </div>
 
+        ))}
+
+      </div>
+      <div className={"mt-10 -mb-10"}>
+        <CallOrWhatsApp/>
+      </div>
       {/* Custom animation styles */}
       <style jsx>{`
         @keyframes fadeInUp {
