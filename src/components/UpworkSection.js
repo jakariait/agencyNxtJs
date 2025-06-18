@@ -8,27 +8,27 @@ const statsData = [
     label: "Hours Worked",
     icon: Clock,
     value: 50000,
-    color: "text-green-400",
+    color: "text-green-600",
   },
   {
     label: "Projects Completed",
     icon: Briefcase,
     value: 270,
-    color: "text-yellow-300",
+    color: "text-yellow-500",
   },
   {
     label: "Job Success Rate",
     icon: CheckCircle,
     value: 100,
     suffix: "%",
-    color: "text-blue-400",
+    color: "text-blue-600",
   },
   {
     label: "Experience",
     icon: Calendar,
     value: 13,
     suffix: "+ Years",
-    color: "text-pink-400",
+    color: "text-pink-600",
   },
 ];
 
@@ -59,22 +59,22 @@ export default function UpworkSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-5 shadow-xl"
+        className="bg-white rounded-3xl p-8 border border-gray-200 shadow-lg"
       >
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Heading */}
-          <h2 className="text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">
             Proven on Upwork
           </h2>
 
           {/* Subheading */}
-          <p className="text-gray-300 text-lg max-w-2xl">
+          <p className="text-gray-700 text-lg max-w-2xl">
             We’ve built long-term trust with global clients through consistent
             quality and delivery on the world’s top freelancing platform.
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2  gap-8  w-full">
+          <div className="grid grid-cols-2 gap-8 w-full mt-6">
             {statsData.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -84,7 +84,7 @@ export default function UpworkSection() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="flex flex-col items-center text-center space-y-2"
                 >
-                  <div className="p-3 bg-white/10 rounded-full shadow-inner">
+                  <div className="p-3 bg-gray-100 rounded-full shadow-inner">
                     <Icon className={`w-8 h-8 ${stat.color}`} />
                   </div>
                   <div
@@ -92,23 +92,24 @@ export default function UpworkSection() {
                   >
                     {Math.floor(counts[index])}
                     {stat.suffix && (
-                      <span className="text-xl font-medium ml-1">
+                      <span className="text-xl font-medium ml-1 text-gray-700">
                         {stat.suffix}
                       </span>
                     )}
                   </div>
-                  <div className="text-sm text-gray-300 tracking-wide uppercase">
+                  <div className="text-sm text-gray-600 tracking-wide uppercase">
                     {stat.label}
                   </div>
                 </motion.div>
               );
             })}
           </div>
+
           <a
             href="https://www.upwork.com/freelancers/your-username" // replace with your actual profile URL
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="mt-8 inline-block px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 hover:scale-105 transition-transform shadow-lg"
           >
             View Our Upwork Profile
           </a>

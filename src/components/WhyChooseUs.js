@@ -32,8 +32,10 @@ const WhyChooseUs = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Why Choose Us?
         </h2>
+
         <p className="text-purple-200 text-lg max-w-2xl mx-auto">
-          We’re more than just a service provider — we’re your long-term digital growth partner.
+          We’re more than just a service provider — we’re your long-term digital
+          growth partner.
         </p>
       </div>
 

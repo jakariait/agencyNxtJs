@@ -17,11 +17,14 @@ export default function HeroSection() {
 
   useEffect(() => {
     setIsVisible(true);
+
     const interval = setInterval(() => {
       setCurrentStat((prev) => (prev + 1) % stats.length);
     }, 2000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [stats.length]);
+
 
   return (
     <div className="relative  bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
