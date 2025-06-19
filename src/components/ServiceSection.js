@@ -62,18 +62,17 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-purple-300 via-blue-300 to-indigo-300 px-2 overflow-hidden py-20">
+    <section className="relative bg-indigo-950 px-2 overflow-hidden py-20">
       {/* Floating geometric shapes */}
       <FloatingShapes />
 
-
       {/* Header */}
       <div className="max-w-6xl mx-auto text-center mb-16 relative z-10 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 relative inline-block">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 relative inline-block">
           Our Core Services
           <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
         </h2>
-        <p className="text-gray-700 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed tracking-wide">
+        <p className="text-gray-300 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed tracking-wide">
           From building stunning websites to executing data-driven marketing
           campaigns — we offer everything you need to grow online.
         </p>
@@ -93,33 +92,33 @@ const ServiceSection = () => {
             <div className="mx-auto mb-5 w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
               <service.icon className="w-6 h-6 text-white transition-colors duration-300 group-hover:text-yellow-300" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {service.title}
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+            <p className="text-sm text-gray-700 leading-relaxed mb-4">
               {service.desc}
             </p>
 
             {/* Feature Highlights */}
-            <ul className="text-sm text-gray-500 list-disc list-inside space-y-1 text-left max-w-xs mx-auto">
+            <ul className="text-sm text-gray-600 list-disc list-inside space-y-1 text-left max-w-xs mx-auto">
               {service.features.map((feature, i) => (
                 <li key={i}>{feature}</li>
               ))}
             </ul>
             <Link
               href={service.href}
-              className="btn-indigo"
+              className="inline-block mt-4 text-white bg-indigo-600 hover:bg-indigo-700 font-semibold py-2 px-4 rounded-lg transition duration-300"
             >
               Visit Service Page
             </Link>
           </div>
-
         ))}
+      </div>
 
-      </div>
       <div className={"mt-10 -mb-10"}>
-        <CallOrWhatsApp/>
+        <CallOrWhatsApp />
       </div>
+
       {/* Custom animation styles */}
       <style jsx>{`
         @keyframes fadeInUp {

@@ -25,7 +25,7 @@ const TeamPreviewSection = () => {
   return (
     <section
       id="team"
-      className="relative bg-indigo-900  py-20 px-4"
+      className="relative bg-indigo-950  py-20 px-4"
     >
       <FloatingShapes />
 

@@ -34,7 +34,7 @@ export default function ComparisonSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-indigo-900  text-white overflow-hidden">
+    <section className="relative py-24 bg-indigo-950  text-white overflow-hidden">
       <FloatingShapes />
       <WhyChooseUs2/>
 
@@ -42,6 +42,8 @@ export default function ComparisonSection() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-snug">
           Why Would You Want to{" "}
           <span className="text-pink-400">Settle for Less?</span>
+          <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
+
         </h2>
         <p className="text-lg text-purple-200 mb-14">
           Compare the experience — and see why businesses choose{" "}

@@ -15,7 +15,7 @@ const links = [
 
 const HeaderServer = () => {
   return (
-    <header className="bg-indigo-900  fixed w-full z-100">
+    <header className="bg-indigo-950  fixed w-full z-100">
       <nav className="xl:container xl:mx-auto px-3 py-2 flex items-center justify-between relative">
         {/* Logo */}
         <div className="w-22 z-50">

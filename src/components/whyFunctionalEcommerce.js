@@ -1,5 +1,5 @@
 import React from "react";
-import { Smile, Smartphone, TrendingUp,Zap } from "lucide-react";
+import { Smile, Smartphone, TrendingUp, Zap } from "lucide-react";
 
 const features = [
   {
@@ -37,9 +37,8 @@ const WhyFunctionalEcommerce = () => {
         </h1>
 
         <h1 className="text-gray-300 text-lg font-semibold md:text-xl mt-4 mb-8">
-          আপনার ই-কমার্স ওয়েবসাইট হতে হবে এমন যা
-          দ্রুত লোড হয়, সহজে নেভিগেট করা যায়, দেখতে আকর্ষনীয়  এবং কাস্টমারকে অর্ডার করতে আগ্রহী
-          করে তোলে।
+          আপনার ই-কমার্স ওয়েবসাইট হতে হবে এমন যা দ্রুত লোড হয়, সহজে নেভিগেট করা
+          যায়, দেখতে আকর্ষনীয় এবং কাস্টমারকে অর্ডার করতে আগ্রহী করে তোলে।
         </h1>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 justify-center items-stretch">

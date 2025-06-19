@@ -31,6 +31,8 @@ const WhyChooseUs = () => {
       <div className="max-w-6xl mx-auto text-center mb-16 px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Why Choose Us?
+          <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
+
         </h2>
 
         <p className="text-purple-200 text-lg max-w-2xl mx-auto">

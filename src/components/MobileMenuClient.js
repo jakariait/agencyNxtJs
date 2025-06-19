@@ -21,7 +21,7 @@ const MobileMenuClient = ({ links }) => {
 
       {/* Mobile Menu */}
       <ul
-        className={`lg:hidden fixed top-14 right-0 w-full bg-indigo-900  z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-white ${
+        className={`lg:hidden fixed top-14 right-0 w-full bg-indigo-950  z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-white ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
