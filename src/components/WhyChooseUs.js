@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { ShieldCheck, Sparkles, Headphones, TrendingUp } from "lucide-react";
 
 const whyUs = [
@@ -25,62 +26,71 @@ const whyUs = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const WhyChooseUs = () => {
   return (
     <section className="relative pb-10">
       <div className="max-w-6xl mx-auto text-center mb-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-white mb-4"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          custom={0}
+        >
           Why Choose Us?
           <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
+        </motion.h2>
 
-        </h2>
-
-        <p className="text-purple-200 text-lg max-w-2xl mx-auto">
+        <motion.p
+          className="text-purple-200 text-lg max-w-2xl mx-auto"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          custom={1}
+        >
           We’re more than just a service provider — we’re your long-term digital
           growth partner.
-        </p>
+        </motion.p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
-        {whyUs.map((item, index) => (
-          <div
-            key={index}
-            className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-lg p-6 text-center transition-transform duration-300 hover:-translate-y-1 opacity-0 animate-fadeInUp"
-            style={{
-              animationDelay: `${index * 150}ms`,
-              animationFillMode: "forwards",
-            }}
-          >
-            <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-indigo-600 text-white shadow-md">
-              <item.icon className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              {item.title}
-            </h3>
-            <p className="text-sm text-gray-600">{item.desc}</p>
-          </div>
-        ))}
+        {whyUs.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={index}
+              className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-lg p-6 text-center transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              custom={index + 2} // delay after heading and paragraph
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-indigo-600 text-white shadow-md">
+                <Icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </motion.div>
+          );
+        })}
       </div>
-
-      {/* Animation styles */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeInUp {
-          animation-name: fadeInUp;
-          animation-duration: 600ms;
-          animation-timing-function: ease-out;
-          animation-fill-mode: forwards;
-        }
-      `}</style>
     </section>
   );
 };

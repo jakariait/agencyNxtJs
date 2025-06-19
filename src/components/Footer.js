@@ -11,20 +11,43 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Footer = () => {
   return (
-    <footer className="relative bg-indigo-950 pt-10 pb-5 px-4 text-white">
+    <footer className="relative bg-indigo-950 pt-10 pb-5 px-4 text-white overflow-hidden">
       {/* Floating shapes (background layer) */}
       <div className="absolute inset-0 z-0">
         <FloatingShapes />
       </div>
 
-      <div className="xl:container xl:mx-auto grid grid-cols-1 md:grid-cols-13 items-center justify-between gap-10 relative z-10">
+      <motion.div
+        className="xl:container xl:mx-auto grid grid-cols-1 md:grid-cols-13 items-center justify-between gap-10 relative z-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
         {/* Logo + About */}
-        <div className="col-span-4 text-center md:text-left">
+        <motion.div
+          className="col-span-4 text-center md:text-left"
+          variants={fadeInUp}
+          custom={0}
+        >
           <Link href="/">
-            <div className="flex items-center justify-center md:justify-start gap-3">
+            <div className="flex items-center justify-center md:justify-start gap-3 cursor-pointer">
               <Image
                 src="/Topper-IT-Logo-149x74.png"
                 alt="Logo"
@@ -38,14 +61,16 @@ const Footer = () => {
             We craft stunning, scalable websites and digital solutions that help
             businesses grow and thrive online.
           </p>
-        </div>
+        </motion.div>
 
         {/* Quick Links + Services */}
-        <div className="col-span-6 grid grid-cols-2 text-center md:text-left">
+        <motion.div
+          className="col-span-6 grid grid-cols-2 text-center md:text-left"
+          variants={fadeInUp}
+          custom={1}
+        >
           <div>
-            <h4 className="text-xl font-semibold text-white mb-4">
-              Quick Links
-            </h4>
+            <h4 className="text-xl font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/" className="hover:text-blue-300 transition">
@@ -53,10 +78,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#services"
-                  className="hover:text-blue-300 transition"
-                >
+                <Link href="#services" className="hover:text-blue-300 transition">
                   Services
                 </Link>
               </li>
@@ -66,10 +88,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#clients"
-                  className="hover:text-blue-300 transition"
-                >
+                <Link href="#clients" className="hover:text-blue-300 transition">
                   Clients
                 </Link>
               </li>
@@ -82,9 +101,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-xl font-semibold text-white mb-4">
-              Our Services
-            </h4>
+            <h4 className="text-xl font-semibold text-white mb-4">Our Services</h4>
             <ul className="space-y-2 text-gray-300">
               <li>Website Development</li>
               <li>E-commerce Solutions</li>
@@ -93,10 +110,14 @@ const Footer = () => {
               <li>Mobile Apps</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Contact Info */}
-        <div className="col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
+        <motion.div
+          className="col-span-3 flex flex-col items-center md:items-start text-center md:text-left"
+          variants={fadeInUp}
+          custom={2}
+        >
           <h4 className="text-xl font-semibold text-white mb-4">Contact Us</h4>
           <p className="text-sm text-gray-300 flex flex-col gap-2">
             <span className="flex items-center gap-2 justify-center md:justify-start">
@@ -136,13 +157,20 @@ const Footer = () => {
               <FaWhatsapp />
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-gray-400 relative z-10">
+      <motion.div
+        className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-gray-400 relative z-10"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+        custom={3}
+      >
         © {new Date().getFullYear()} WebNinja. All rights reserved.
-      </div>
+      </motion.div>
     </footer>
   );
 };

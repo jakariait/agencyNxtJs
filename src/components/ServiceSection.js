@@ -2,8 +2,23 @@
 import React from "react";
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import FloatingShapes from "@/components/FloatingShapes";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
+
+// Animation variant
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const ServiceSection = () => {
   const services = [
@@ -63,10 +78,9 @@ const ServiceSection = () => {
 
   return (
     <section className="relative bg-indigo-950 px-2 overflow-hidden py-20">
-      {/* Floating geometric shapes */}
       <FloatingShapes />
 
-      {/* Header */}
+      {/* Section Heading */}
       <div className="max-w-6xl mx-auto text-center mb-16 relative z-10 px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 relative inline-block">
           Our Core Services
@@ -78,19 +92,20 @@ const ServiceSection = () => {
         </p>
       </div>
 
-      {/* Services grid */}
+      {/* Service Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fadeInUp"
-            style={{
-              animationDelay: `${index * 150}ms`,
-              animationFillMode: "forwards",
-            }}
+            className="bg-white group rounded-2xl shadow-md p-6 text-center transition-transform hover:shadow-xl hover:-translate-y-1"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <div className="mx-auto mb-5 w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-              <service.icon className="w-6 h-6 text-white transition-colors duration-300 group-hover:text-yellow-300" />
+              <service.icon className="w-6 h-6 text-white group-hover:text-yellow-300 transition-colors duration-300" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {service.title}
@@ -98,63 +113,21 @@ const ServiceSection = () => {
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
               {service.desc}
             </p>
-
-            {/* Feature Highlights */}
             <ul className="text-sm text-gray-600 list-disc list-inside space-y-1 text-left max-w-xs mx-auto">
               {service.features.map((feature, i) => (
                 <li key={i}>{feature}</li>
               ))}
             </ul>
-            <Link
-              href={service.href}
-              className="inline-block mt-4 text-white bg-indigo-600 hover:bg-indigo-700 font-semibold py-2 px-4 rounded-lg transition duration-300"
-            >
+            <Link href={service.href} className="btn-indigo">
               Visit Service Page
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      <div className={"mt-10 -mb-10"}>
+      <div className="mt-10 -mb-10">
         <CallOrWhatsApp />
       </div>
-
-      {/* Custom animation styles */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeInUp {
-          animation-name: fadeInUp;
-          animation-duration: 600ms;
-          animation-timing-function: ease-out;
-          animation-fill-mode: forwards;
-        }
-
-        /* Animation delay utilities for blobs and shapes */
-        .animation-delay-0 {
-          animation-delay: 0ms;
-        }
-        .animation-delay-1000 {
-          animation-delay: 1000ms;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2000ms;
-        }
-        .animation-delay-3000 {
-          animation-delay: 3000ms;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4000ms;
-        }
-      `}</style>
     </section>
   );
 };

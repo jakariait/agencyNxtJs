@@ -109,10 +109,11 @@ export default function UpworkSection() {
             href="https://www.upwork.com/freelancers/your-username" // replace with your actual profile URL
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 hover:scale-105 transition-transform shadow-lg"
+            className="btn-indigo"
           >
             View Our Upwork Profile
           </a>
+
         </div>
       </motion.div>
     </div>

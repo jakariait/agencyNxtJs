@@ -1,19 +1,24 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ImageComponent from "@/components/ImageComponent";
 import FloatingShapes from "@/components/FloatingShapes";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
-const Clients = () => {
-  const apiURL = process.env.NEXT_PUBLIC_API_URL;
-  const [brands, setBrands] = useState([]);
+async function fetchBrands(apiURL) {
+  try {
+    const res = await fetch(`${apiURL}/getallcarousel`, { cache: "no-store" });
+    // cache: 'no-store' to always fetch fresh data on server-side
+    if (!res.ok) throw new Error("Failed to fetch brands");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
 
-  useEffect(() => {
-    fetch(`${apiURL}/getallcarousel`)
-      .then((res) => res.json())
-      .then((data) => setBrands(data))
-      .catch((err) => console.error("Fetch error:", err));
-  }, [apiURL]);
+const Clients = async () => {
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
+  const brands = await fetchBrands(apiURL);
 
   return (
     <section className="relative bg-indigo-950 px-2 overflow-hidden py-20">
@@ -53,22 +58,6 @@ const Clients = () => {
           <CallOrWhatsApp />
         </div>
       </div>
-
-      {/* Keyframe animation */}
-      <style jsx>{`
-          @keyframes slide {
-              0% {
-                  transform: translateX(0%);
-              }
-              100% {
-                  transform: translateX(-50%);
-              }
-          }
-
-          .animate-slide {
-              animation: slide 40s linear infinite;
-          }
-      `}</style>
     </section>
   );
 };
