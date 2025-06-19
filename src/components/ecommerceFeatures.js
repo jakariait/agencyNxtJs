@@ -16,7 +16,7 @@ import {
   Gift,
   Tag,
 } from "lucide-react";
-import CallOrWhatsApp from "@/components/ssr/CallOrWhatsApp";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 const EcommerceFeatures = () => {
   return (

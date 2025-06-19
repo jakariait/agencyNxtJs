@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import FloatingShapes from "@/components/FloatingShapes";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 const teamMembers = [
   {
@@ -24,7 +25,7 @@ const TeamPreviewSection = () => {
   return (
     <section
       id="team"
-      className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-20 px-4"
+      className="relative bg-indigo-900  py-20 px-4"
     >
       <FloatingShapes />
 
@@ -78,7 +79,9 @@ const TeamPreviewSection = () => {
         >
           Learn more about us
         </Link>
-
+        <div className={"mt-10 -mb-10"}>
+          <CallOrWhatsApp/>
+        </div>
       </div>
     </section>
   );

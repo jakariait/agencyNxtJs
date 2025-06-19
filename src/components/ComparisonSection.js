@@ -4,6 +4,7 @@ import { ThumbsDown, ThumbsUp } from "lucide-react";
 import FloatingShapes from "@/components/FloatingShapes";
 import { motion } from "framer-motion";
 import WhyChooseUs2 from "@/components/WhyChooseUs";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 const listVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -33,7 +34,7 @@ export default function ComparisonSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+    <section className="relative py-24 bg-indigo-900  text-white overflow-hidden">
       <FloatingShapes />
       <WhyChooseUs2/>
 
@@ -96,6 +97,9 @@ export default function ComparisonSection() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={"mt-10 -mb-15"}>
+        <CallOrWhatsApp/>
       </div>
     </section>
   );

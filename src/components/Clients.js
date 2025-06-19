@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import ImageComponent from "@/components/ImageComponent";
 import FloatingShapes from "@/components/FloatingShapes";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 const Clients = () => {
   const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -28,6 +29,7 @@ const Clients = () => {
         <p className="text-gray-700 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed mb-12">
           We’ve delivered digital solutions for businesses across industries.
           These are some of the respected brands we’ve partnered with.
+
         </p>
 
         {/* Marquee container */}
@@ -47,15 +49,11 @@ const Clients = () => {
             ))}
           </div>
         </div>
+        <div className={"mt-10 -mb-15"}>
+          <CallOrWhatsApp/>
 
-        <a
-          href="https://wa.me/8801307217573"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold px-6 py-3 rounded-full shadow-lg mt-12"
-        >
-          📞 Book a Free Discovery Call
-        </a>
+        </div>
+
       </div>
 
       {/* Keyframe animation */}

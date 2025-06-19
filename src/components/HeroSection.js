@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Star, ChevronRight } from "lucide-react";
 import UpworkSection from "@/components/UpworkSection";
 import FloatingShapes from "@/components/FloatingShapes";
-import ContactActions from "@/components/ContactActions";
-import CallOrWhatsApp from "@/components/ssr/CallOrWhatsApp";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 export default function HeroSection() {
   const [currentStat, setCurrentStat] = useState(0);
@@ -29,7 +28,7 @@ export default function HeroSection() {
 
 
   return (
-    <div className="relative  bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
+    <div className="relative  bg-indigo-900  overflow-hidden">
       <FloatingShapes />
 
       <div className="relative z-10 xl:container xl:mx-auto px-4 pt-30 pb-15">

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import FloatingShapes from "@/components/FloatingShapes";
 
 const MobileMenuClient = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,18 +12,21 @@ const MobileMenuClient = ({ links }) => {
     <>
       {/* Hamburger Icon */}
       <button
-        className="lg:hidden text-red-500 border-1  border-red-500 z-50 cursor-pointer"
+        className="lg:hidden text-white border-1  border-white z-50 cursor-pointer"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X size={38} /> : <Menu size={38} />}
       </button>
+      <FloatingShapes />
 
       {/* Mobile Menu */}
       <ul
-        className={`lg:hidden fixed top-14 right-0 w-full bg-gray-50 z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-black ${
+        className={`lg:hidden fixed top-14 right-0 w-full bg-indigo-900  z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-white ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        <FloatingShapes />
+
         {links.map((link, i) => (
           <li className="relative group" key={i}>
             <Link href={link.href} onClick={() => setMenuOpen(false)}>

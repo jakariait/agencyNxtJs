@@ -1,49 +1,66 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import FloatingShapes from "@/components/FloatingShapes";
 
 const ContactSection = () => {
   return (
-    <section
-      id="contact"
-      className="relative bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 py-20 px-4"
-    >
+    <section className="relative bg-gradient-to-br from-purple-300 via-blue-300 to-indigo-300 px-4 py-20 overflow-hidden">
       <FloatingShapes />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.h2
-          className="text-4xl sm:text-5xl font-extrabold text-white mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Have a project in mind?
-        </motion.h2>
-
-        <p className="text-gray-200 max-w-2xl mx-auto text-lg sm:text-xl mb-10">
-          Want to audit your marketing funnel or build a high-performing website?
-          Let’s talk strategy, design, and results — tailored for your business.
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
+          Let&apos;s Talk About Your Project
+        </h2>
+        <p className="text-gray-700 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed mb-12">
+          Have an idea or project in mind? Let’s connect and bring it to life.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="https://wa.me/8801307217573"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition"
+        <form
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left"
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Message sent!");
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Your Name"
+            required
+            className="col-span-1 sm:col-span-1 px-4 py-3 rounded-lg border border-gray-900 focus:outline-none placeholder:text-black  "
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            required
+            className="col-span-1 sm:col-span-1 px-4 py-3 rounded-lg border border-gray-900 focus:outline-none placeholder:text-black  "
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            className="col-span-1 sm:col-span-1 px-4 py-3 rounded-lg border border-gray-900 focus:outline-none placeholder:text-black  "
+          />
+          <select
+            required
+            className="col-span-1 sm:col-span-1 px-4 py-3 rounded-lg border border-gray-900 focus:outline-none placeholder:text-black  "
           >
-            📞 Book a Free Call on WhatsApp
-          </a>
-
-          <Link
-            href="/request-callback"
-            className="inline-block border border-white text-white hover:bg-white hover:text-indigo-800 font-semibold px-6 py-3 rounded-full shadow-lg transition"
+            <option value="">Select a Service</option>
+            <option value="web">Website Development</option>
+            <option value="ecom">E-commerce Store</option>
+            <option value="seo">SEO & Marketing</option>
+            <option value="design">UI/UX Design</option>
+          </select>
+          <textarea
+            placeholder="Your Message"
+            rows="4"
+            className="col-span-1 sm:col-span-2 px-4 py-3 rounded-lg border border-gray-900 focus:outline-none placeholder:text-black w-full "
+          ></textarea>
+          <button
+            type="submit"
+            className="col-span-1 sm:col-span-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
           >
-            📩 Request a Callback
-          </Link>
-        </div>
+            Send Message
+          </button>
+        </form>
       </div>
     </section>
   );

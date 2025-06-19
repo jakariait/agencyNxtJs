@@ -3,7 +3,7 @@ import React from "react";
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
 import FloatingShapes from "@/components/FloatingShapes";
-import CallOrWhatsApp from "@/components/ssr/CallOrWhatsApp";
+import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 
 const ServiceSection = () => {
   const services = [

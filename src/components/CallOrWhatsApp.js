@@ -18,7 +18,7 @@ const CallOrWhatsApp = () => {
         {/* Call Now */}
         <a
           href="tel:+8801234567890"
-          className="inline-block bg-red-500 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-l-lg transition duration-300  text-center"
+          className="inline-block bg-red-500 hover:bg-red-700 text-white font-semibold px-3 py-3 rounded-l-lg transition duration-300  text-center"
         >
           Call Now
         </a>
@@ -26,9 +26,9 @@ const CallOrWhatsApp = () => {
         {/* Request Call */}
         <button
           onClick={() => setOpen(true)}
-          className="inline-block bg-indigo-600 hover:bg-indigo-800 text-white font-semibold px-6 py-3 transition duration-300  text-center cursor-pointer"
+          className="inline-block bg-indigo-600 hover:bg-indigo-800 text-white font-semibold px-3 py-3 transition duration-300  text-center cursor-pointer"
         >
-          Request a Call
+          Request a Callback
         </button>
 
         {/* WhatsApp */}
@@ -36,7 +36,7 @@ const CallOrWhatsApp = () => {
           href="https://wa.me/8801234567890"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-r-lg transition duration-300 text-center"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-3 py-3 rounded-r-lg transition duration-300 text-center"
         >
           WhatsApp
         </a>

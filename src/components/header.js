@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import MobileMenuClient from "@/components/csr/MobileMenuClient";
+import MobileMenuClient from "@/components/MobileMenuClient";
 
 const links = [
   { name: "Home", href: "/" },
@@ -15,11 +15,11 @@ const links = [
 
 const HeaderServer = () => {
   return (
-    <header className="bg-black fixed w-full z-100">
+    <header className="bg-indigo-900  fixed w-full z-100">
       <nav className="xl:container xl:mx-auto px-3 py-2 flex items-center justify-between relative">
         {/* Logo */}
         <div className="w-22 z-50">
-          <Link href="/">
+          <Link href="/frontend/public">
             <Image
               src="/Topper-IT-Logo-149x74.png"
               alt="MySite Logo"
