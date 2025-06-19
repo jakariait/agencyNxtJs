@@ -118,8 +118,8 @@ const ServiceSection = () => {
                 <li key={i}>{feature}</li>
               ))}
             </ul>
-            <Link href={service.href} className="btn-indigo">
-              Visit Service Page
+            <Link href={service.href} className="btn-indigo mt-5">
+              Learn More
             </Link>
           </motion.div>
         ))}

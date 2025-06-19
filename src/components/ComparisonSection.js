@@ -5,6 +5,7 @@ import { ThumbsDown, ThumbsUp } from "lucide-react";
 import FloatingShapes from "@/components/FloatingShapes";
 import WhyChooseUs2 from "@/components/WhyChooseUs";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
+import { getBrandName } from "@/utils/brand";
 
 const otherAgencyPoints = [
   "Poor Collaboration",
@@ -65,7 +66,7 @@ export default function ComparisonSection() {
           custom={0}
         >
           Compare the experience — and see why businesses choose{" "}
-          <span className="text-white font-semibold">Quixta</span>.
+          <span className="text-white font-semibold">{getBrandName()}</span>.
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-10 text-left">
@@ -117,7 +118,7 @@ export default function ComparisonSection() {
           >
             <div className="flex items-center mb-5">
               <ThumbsUp className="w-7 h-7 text-green-400 mr-3" />
-              <h3 className="text-2xl font-semibold text-white">Quixta</h3>
+              <h3 className="text-2xl font-semibold text-white">{getBrandName()}</h3>
             </div>
             <ul className="space-y-4 mt-4">
               {quixtaPoints.map((item, idx) => (

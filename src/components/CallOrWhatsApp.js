@@ -4,10 +4,12 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
-  Button,
+
 } from "@mui/material";
 import ContactForm from "@/components/ContactForm";
+import { getPhoneNumber, getWhatsAppLink } from "@/utils/brand";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const CallOrWhatsApp = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +20,7 @@ const CallOrWhatsApp = () => {
       <div className="flex items-center justify-center relative flex-wrap gap-0">
         {/* Call Now */}
         <a
-          href="tel:+8801234567890"
+          href={getPhoneNumber()}
           className="inline-block bg-red-500 hover:bg-red-700 text-white font-semibold px-3 py-3 rounded-l-lg transition duration-300  text-center"
         >
           Call Now
@@ -34,12 +36,12 @@ const CallOrWhatsApp = () => {
 
         {/* WhatsApp */}
         <a
-          href="https://wa.me/8801234567890"
+          href={getWhatsAppLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-3 py-3 rounded-r-lg transition duration-300 text-center"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-r-lg transition duration-300 text-center cursor-pointer"
         >
-          WhatsApp
+          <FaWhatsapp className="w-6 h-6" />
         </a>
       </div>
 

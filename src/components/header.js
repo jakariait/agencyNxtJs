@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenuClient from "@/components/MobileMenuClient";
+import { getBrandLogo, getBrandName, getWhatsAppLink } from "@/utils/brand";
 
 const links = [
   { name: "Home", href: "/" },
@@ -20,7 +21,7 @@ const HeaderServer = () => {
         <div className="w-22 z-50">
           <Link href="/">
             <Image
-              src="/Topper-IT-Logo-149x74.png"
+              src={getBrandLogo()}
               alt="MySite Logo"
               width={128}
               height={40}
@@ -29,7 +30,7 @@ const HeaderServer = () => {
           </Link>
         </div>
         <h1 className={"text-gray-100 text-md font-semibold lg:hidden"}>
-          Welcome to Topper IT
+          Welcome to {getBrandName()}
         </h1>
         {/* Desktop Menu */}
         <ul className="lg:flex items-center justify-end gap-6 font-bold hidden text-white">
@@ -41,7 +42,7 @@ const HeaderServer = () => {
           ))}
           <li className="relative group">
             <a
-              href="https://wa.me/8801234567890"
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-600"

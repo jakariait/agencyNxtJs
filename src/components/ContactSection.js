@@ -79,17 +79,20 @@ const ContactSection = () => {
             <option value="" className="text-black">
               Select a Service
             </option>
-            <option value="web" className="text-black">
+            <option value="web-development" className="text-black">
               Website Development
             </option>
-            <option value="ecom" className="text-black">
-              E-commerce Store
+            <option value="ecommerce-solutions" className="text-black">
+              E-Commerce Solutions
             </option>
-            <option value="seo" className="text-black">
-              SEO & Marketing
+            <option value="digital-marketing" className="text-black">
+              Digital Marketing
             </option>
-            <option value="design" className="text-black">
-              UI/UX Design
+            <option value="meta-marketing" className="text-black">
+              Meta Marketing
+            </option>
+            <option value="other" className="text-black">
+              Other
             </option>
           </motion.select>
 

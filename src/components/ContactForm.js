@@ -17,10 +17,10 @@ const ContactForm = () => {
 
   const services = [
     { value: "", label: "Select a Service" },
-    { value: "amazon-fba", label: "Amazon FBA" },
-    { value: "shopify", label: "Shopify" },
-    { value: "meta-ads", label: "Meta Ads" },
-    { value: "problem-solving", label: "Problem Solving" },
+    { value: "web-development", label: "Website Development" },
+    { value: "ecommerce-solutions", label: "E-Commerce Solutions\n" },
+    { value: "digital-marketing", label: "Digital Marketing" },
+    { value: "meta-marketing", label: "Meta Marketing" },
     { value: "other", label: "Other" },
   ];
 

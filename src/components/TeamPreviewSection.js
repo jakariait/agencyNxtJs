@@ -5,19 +5,30 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import FloatingShapes from "@/components/FloatingShapes";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
+import { Facebook, Linkedin, Globe } from "lucide-react";
 
 const teamMembers = [
   {
     name: "Jakaria Rahman",
-    role: "Founder & CEO",
+    role: "Co-Founder & Tech Lead",
     image: "/jakaria.jpeg",
-    bio: "Visionary leader passionate about digital transformation and client growth.",
+    bio: "Drives the technical vision of the company and leads the development team with hands-on expertise in modern web technologies.",
+    socials: {
+      facebook: "https://www.facebook.com/jakariait/",
+      linkedin: "https://linkedin.com/in/jakaria",
+      website: "https://buildwithjakaria.com/",
+    },
   },
   {
     name: "Ridwan H. Rifat",
-    role: "Creative Director",
+    role: "Co-Founder & Marketing Lead",
     image: "/hero-img.jpeg",
-    bio: "Expert in UI/UX design and brand storytelling. Turns ideas into experiences.",
+    bio: "Passionate marketer and co-founder focused on scaling brands through creative strategy and performance marketing.",
+    socials: {
+      facebook: "https://www.facebook.com/iamrifatt",
+      linkedin: "https://linkedin.com/in/ridwanhrifat",
+      website: "https://elevatewithrifat.com/",
+    },
   },
 ];
 
@@ -37,7 +48,7 @@ const fadeInUp = {
 
 const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
   return (
-    <section id="team" className="relative  py-20 px-4">
+    <section id="team" className="relative py-20 px-4">
       <FloatingShapes />
 
       <motion.div
@@ -68,10 +79,10 @@ const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 cursor-pointer"
+              className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1 "
               variants={fadeInUp}
-              custom={index + 2} // delay cards after heading and paragraph
-              whileHover={{ scale: 1.05 }}
+              custom={index + 2}
+              whileHover={{ scale: 1.00 }}
             >
               <div className="relative w-full h-96 md:h-[500px]">
                 <Image
@@ -85,6 +96,40 @@ const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
                 <h3 className="text-xl font-semibold">{member.name}</h3>
                 <p className="text-indigo-300 mb-2">{member.role}</p>
                 <p className="text-sm text-gray-200">{member.bio}</p>
+
+                {/* Social Icons */}
+                <div className="flex justify-center gap-4 mt-4">
+                  {member.socials?.facebook && (
+                    <a
+                      href={member.socials.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-300 hover:text-white transition"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.socials?.linkedin && (
+                    <a
+                      href={member.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-300 hover:text-white transition"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.socials?.website && (
+                    <a
+                      href={member.socials.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-300 hover:text-white transition"
+                    >
+                      <Globe className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -92,7 +137,7 @@ const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
 
         {showLearnMoreButton && (
           <motion.div variants={fadeInUp} custom={teamMembers.length + 2}>
-            <Link href="/about" className="btn-indigo">
+            <Link href="/about-us" className="btn-indigo">
               Learn more about us
             </Link>
           </motion.div>

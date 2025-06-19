@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import FloatingShapes from "@/components/FloatingShapes";
+import { getWhatsAppLink } from "@/utils/brand";
 
 const MobileMenuClient = ({ links }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,11 +18,10 @@ const MobileMenuClient = ({ links }) => {
       >
         {menuOpen ? <X size={38} /> : <Menu size={38} />}
       </button>
-      <FloatingShapes />
 
       {/* Mobile Menu */}
       <ul
-        className={`lg:hidden fixed top-14 right-0 w-full   z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-white ${
+        className={`lg:hidden fixed top-14 right-0 w-full bg-indigo-950  z-100 transform transition-transform duration-300 ease-in-out px-6 py-8 flex flex-col items-start gap-4 font-bold text-white ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -37,7 +37,7 @@ const MobileMenuClient = ({ links }) => {
         ))}
         <li className="relative group">
           <a
-            href="https://wa.me/8801234567890"
+            href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-600"

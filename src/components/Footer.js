@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { getBrandLogo, getBrandName, getWhatsAppLink } from "@/utils/brand";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -33,12 +34,12 @@ const FooterSimple = () => {
           custom={0}
         >
           <Image
-            src="/Topper-IT-Logo-149x74.png"
+            src={getBrandLogo()}
             alt="WebNinja Logo"
             width={40}
             height={40}
           />
-          <span className="text-xl font-bold">WebNinja</span>
+          <span className="text-xl font-bold">{getBrandName()}</span>
         </motion.div>
 
         {/* Middle: Social Icons */}
@@ -64,7 +65,7 @@ const FooterSimple = () => {
             <FaLinkedinIn />
           </a>
           <a
-            href="https://wa.me/8801234567890"
+            href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#25D366] hover:text-[#5de287] transition"
@@ -75,11 +76,11 @@ const FooterSimple = () => {
 
         {/* Right: Copyright */}
         <motion.div
-          className="text-sm text-gray-400 text-center md:text-right"
+          className="text-sm text-gray-400 text-center md:text-right "
           variants={fadeInUp}
           custom={2}
         >
-          © {new Date().getFullYear()} WebNinja. All rights reserved.
+          © {new Date().getFullYear()} {getBrandName()}. All rights reserved.
         </motion.div>
       </motion.div>
     </footer>

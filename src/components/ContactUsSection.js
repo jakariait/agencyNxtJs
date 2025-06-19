@@ -4,6 +4,7 @@ import { Mail, Phone, CheckCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import FloatingShapes from "@/components/FloatingShapes";
 import { motion } from "framer-motion";
+import { getPhoneNumber } from "@/utils/brand";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -101,7 +102,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Call Us</h4>
                     <p className="text-gray-300">
-                      <a href="tel:+12175955859">+1 (217) 595-5859</a>
+                      <a href={getPhoneNumber()}>{getPhoneNumber().replace(/^tel:/, "")}</a>
                     </p>
                   </div>
                 </div>
