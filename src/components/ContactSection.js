@@ -18,7 +18,7 @@ const fadeInUp = {
 
 const ContactSection = () => {
   return (
-    <section className="relative bg-indigo-950 px-4 py-20 overflow-hidden">
+    <section className="relative  px-4 py-20 overflow-hidden">
       <FloatingShapes />
 
       <motion.div

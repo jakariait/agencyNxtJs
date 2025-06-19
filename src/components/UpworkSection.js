@@ -106,7 +106,7 @@ export default function UpworkSection() {
           </div>
 
           <a
-            href="https://www.upwork.com/freelancers/your-username" // replace with your actual profile URL
+            href="https://www.upwork.com/agencies/638969246336360448/" // replace with your actual profile URL
             target="_blank"
             rel="noopener noreferrer"
             className="btn-indigo"

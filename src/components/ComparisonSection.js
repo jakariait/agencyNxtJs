@@ -38,7 +38,7 @@ const fadeInUp = {
 
 export default function ComparisonSection() {
   return (
-    <section className="relative py-24 bg-indigo-950 text-white overflow-hidden">
+    <section className="relative py-24  text-white overflow-hidden">
       <FloatingShapes />
       <WhyChooseUs2 />
 

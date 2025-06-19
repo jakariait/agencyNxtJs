@@ -6,20 +6,19 @@ const links = [
   { name: "Home", href: "/" },
   { name: "E-commerce Website", href: "/" },
   { name: "Landing Page", href: "/" },
-  { name: "Digital Marketing", href: "/" },
+  { name: "Meta Marketing", href: "/meta" },
   { name: "Pricing", href: "/" },
-  { name: "About Us", href: "/" },
-  { name: "Contact", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Contact", href: "/contact-us" },
 ];
-
 
 const HeaderServer = () => {
   return (
-    <header className="bg-indigo-950  fixed w-full z-100">
+    <header className="fixed w-full bg-indigo-950 z-100">
       <nav className="xl:container xl:mx-auto px-3 py-2 flex items-center justify-between relative">
         {/* Logo */}
         <div className="w-22 z-50">
-          <Link href="/frontend/public">
+          <Link href="/">
             <Image
               src="/Topper-IT-Logo-149x74.png"
               alt="MySite Logo"

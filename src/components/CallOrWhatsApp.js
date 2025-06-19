@@ -7,6 +7,7 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
+import ContactForm from "@/components/ContactForm";
 
 const CallOrWhatsApp = () => {
   const [open, setOpen] = useState(false);
@@ -43,67 +44,35 @@ const CallOrWhatsApp = () => {
       </div>
 
       {/* MUI Dialog with HTML Form */}
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle className="font-bold text-gray-800 text-center">
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        PaperProps={{
+          sx: {
+            backgroundColor: "#1e1b4b", // same as bg-indigo-950
+            maxWidth: "600px",          // same as max-w-2xl
+            width: "100%",
+            borderRadius: 2,
+            mx: "auto",
+          },
+        }}
+      >
+        <DialogTitle
+          sx={{
+            fontWeight: "bold",
+            color: "white",
+            textAlign: "center",
+            backgroundColor: "#1e1b4b",
+          }}
+        >
           Request a Call
         </DialogTitle>
-        <DialogContent>
-          <form
-            className="space-y-4 mt-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              // Handle form submission here
-              setOpen(false);
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-indigo-200"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-indigo-200"
-              required
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-indigo-200"
-              required
-            />
-            <select
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-indigo-200"
-              required
-            >
-              <option value="">Select Service</option>
-              <option value="website">Website Development</option>
-              <option value="ecommerce">E-commerce</option>
-              <option value="marketing">Marketing</option>
-            </select>
-            <textarea
-              placeholder="Your Message"
-              rows="3"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-indigo-200"
-              required
-            ></textarea>
 
-            <DialogActions className="px-0">
-              <Button onClick={() => setOpen(false)} color="inherit">
-                Cancel
-              </Button>
-              <button
-                type="submit"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-md"
-              >
-                Submit
-              </button>
-            </DialogActions>
-          </form>
+        <DialogContent sx={{ backgroundColor: "#1e1b4b", p: 0 }}>
+          <ContactForm />
         </DialogContent>
       </Dialog>
+
     </div>
   );
 };

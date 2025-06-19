@@ -22,7 +22,7 @@ const fadeInUp = {
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-indigo-950 overflow-hidden">
+    <div className="relative  overflow-hidden">
       <FloatingShapes />
 
       <div className="relative z-10 xl:container xl:mx-auto px-4 pt-30 pb-15">

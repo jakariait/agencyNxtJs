@@ -35,9 +35,9 @@ const fadeInUp = {
   }),
 };
 
-const TeamPreviewSection = () => {
+const TeamPreviewSection = ({ showLearnMoreButton = true }) => {
   return (
-    <section id="team" className="relative bg-indigo-950 py-20 px-4">
+    <section id="team" className="relative  py-20 px-4">
       <FloatingShapes />
 
       <motion.div
@@ -90,11 +90,13 @@ const TeamPreviewSection = () => {
           ))}
         </div>
 
-        <motion.div variants={fadeInUp} custom={teamMembers.length + 2}>
-          <Link href="/about" className="btn-indigo">
-            Learn more about us
-          </Link>
-        </motion.div>
+        {showLearnMoreButton && (
+          <motion.div variants={fadeInUp} custom={teamMembers.length + 2}>
+            <Link href="/about" className="btn-indigo">
+              Learn more about us
+            </Link>
+          </motion.div>
+        )}
 
         <div className="mt-10 -mb-10">
           <CallOrWhatsApp />
