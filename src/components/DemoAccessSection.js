@@ -45,7 +45,7 @@ const fadeInUp = {
 
 const DemoAccessSection = () => {
   return (
-    <section className="relative  text-white pb-24 px-4 overflow-hidden">
+    <section className="relative  text-white  px-4 overflow-hidden">
       <FloatingShapes />
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2

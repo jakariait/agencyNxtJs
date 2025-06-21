@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Users,
   TrendingUp,
@@ -275,43 +277,107 @@ export default function FullServiceMetaAgency() {
     },
   ];
 
+  // Animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
+  const fadeInLeft = {
+    initial: { opacity: 0, x: -60 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
+  const fadeInRight = {
+    initial: { opacity: 0, x: 60 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, ease: "easeOut" },
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const scaleIn = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 0.5, ease: "easeOut" },
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent"></div>
         <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-600/10 rounded-full text-blue-600 text-sm font-medium mb-6">
+          <motion.div
+            className="inline-flex items-center px-4 py-2 bg-blue-600/10 rounded-full text-blue-600 text-sm font-medium mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <Users className="w-4 h-4 mr-2" />
             Full-Service Meta Agency
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-blue-600 bg-clip-text text-transparent">
+          </motion.div>
+
+          <motion.h1
+            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-blue-600 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Your Complete Meta
             <br />
             Advertising Partner
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From campaign strategy to million-dollar results, w&apos;re the only
-            Meta advertising agency you&apos;ll ever need. Our comprehensive
-            services handle every aspect of your Facebook and Instagram
-            marketing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+          </motion.h1>
+
+          <motion.p
+            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            From campaign strategy to million-dollar results, we&apos;re the
+            only Meta advertising agency you&apos;ll ever need. Our
+            comprehensive services handle every aspect of your Facebook and
+            Instagram marketing.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <motion.a
               // href={getCalendlyLink()}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <button className="btn-indigo">Get Your Free Meta Audit</button>
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
       {/* Agency Stats */}
       <section className="py-16 px-4 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl font-bold mb-4 text-black">
               Trusted by Brands Across All Industries
             </h2>
@@ -319,12 +385,25 @@ export default function FullServiceMetaAgency() {
               Our track record speaks for itself. We&apos;ve helped thousands of
               businesses succeed with Meta advertising.
             </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={staggerContainer}
+          >
             {agencyStats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <div key={index} className="text-center group">
+                <motion.div
+                  key={index}
+                  className="text-center group"
+                  variants={scaleIn}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="w-16 h-16 mx-auto mb-4 bg-blue-600/10 rounded-full flex items-center justify-center group-hover:bg-blue-600/20 transition-colors">
                     <IconComponent className="w-8 h-8 text-blue-600" />
                   </div>
@@ -337,40 +416,65 @@ export default function FullServiceMetaAgency() {
                   <div className="text-gray-500 text-sm">
                     {stat.description}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Full Services Grid */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold mb-6 text-black">
               Complete Meta Advertising Solutions
             </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <motion.div
+              className="w-24 h-1 bg-blue-600 mx-auto mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Everything you need to dominate Facebook and Instagram
               advertising, all under one roof. No need to manage multiple
               vendors or agencies.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={staggerContainer}
+          >
             {fullServices.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-600/50 transition-all duration-300 hover:shadow-lg"
+                  variants={fadeInUp}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-blue-600/10 rounded-full flex items-center justify-center mr-4">
+                    <motion.div
+                      className="w-12 h-12 bg-blue-600/10 rounded-full flex items-center justify-center mr-4"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <IconComponent className="w-6 h-6 text-blue-600" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-xl font-bold text-black">
                       {category.category}
                     </h3>
@@ -378,9 +482,13 @@ export default function FullServiceMetaAgency() {
 
                   <div className="space-y-4">
                     {category.services.map((service, idx) => (
-                      <div
+                      <motion.div
                         key={idx}
                         className="border-l-2 border-blue-600/20 pl-4"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
                       >
                         <h4 className="font-semibold text-black mb-1">
                           {service.name}
@@ -388,42 +496,67 @@ export default function FullServiceMetaAgency() {
                         <p className="text-gray-600 text-sm">
                           {service.description}
                         </p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Client Types */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold mb-6 text-black">
               We Serve Every Type of Business
             </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <motion.div
+              className="w-24 h-1 bg-blue-600 mx-auto mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Whether you&apos;re a startup looking to build awareness or an
               enterprise scaling your advertising efforts, we have the expertise
               to drive results.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={staggerContainer}
+          >
             {clientTypes.map((client, index) => {
               const IconComponent = client.icon;
               return (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white p-8 rounded-xl border border-gray-200 hover:border-blue-600/50 transition-all duration-300 group hover:shadow-lg text-center"
+                  variants={scaleIn}
+                  whileHover={{ y: -10, scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <div className="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600/20 transition-colors">
+                  <motion.div
+                    className="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600/20 transition-colors"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
                     <IconComponent className="w-8 h-8 text-blue-600" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-black mb-4">
                     {client.type}
                   </h3>
@@ -431,50 +564,83 @@ export default function FullServiceMetaAgency() {
 
                   <div className="space-y-2 mb-6">
                     {client.services.map((service, idx) => (
-                      <div
+                      <motion.div
                         key={idx}
                         className="flex items-center justify-center text-gray-600"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
                       >
                         <CheckCircle className="w-4 h-4 text-blue-600 mr-2" />
                         {service}
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
-                  <div className="bg-blue-600/10 px-4 py-2 rounded-full text-blue-600 font-semibold text-sm">
+                  <motion.div
+                    className="bg-blue-600/10 px-4 py-2 rounded-full text-blue-600 font-semibold text-sm"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     {client.results}
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Success Process */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold mb-6 text-black">
               Our Proven Success Process
             </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <motion.div
+              className="w-24 h-1 bg-blue-600 mx-auto mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            ></motion.div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               A systematic approach that&apos;s helped thousands of businesses
               achieve Meta advertising success
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={staggerContainer}
+          >
             {successProcess.map((phase, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-600/50 transition-all duration-300 hover:shadow-lg"
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               >
                 <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4">
+                  <motion.div
+                    className="w-12 h-12 bg-blue-600 text-white font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4"
+                    whileHover={{ scale: 1.1, rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     {index + 1}
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-bold text-black mb-2">
                     {phase.phase}
                   </h3>
@@ -493,18 +659,22 @@ export default function FullServiceMetaAgency() {
                     Deliverables:
                   </h4>
                   {phase.deliverables.map((deliverable, idx) => (
-                    <div
+                    <motion.div
                       key={idx}
                       className="flex items-center text-gray-600 text-sm"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.5 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
                     >
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
                       {deliverable}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -512,7 +682,12 @@ export default function FullServiceMetaAgency() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={fadeInLeft}
+            >
               <h2 className="text-4xl font-bold mb-6 text-black">
                 Why Choose Us as Your Meta Partner?
               </h2>
@@ -544,22 +719,41 @@ export default function FullServiceMetaAgency() {
                       "Real-time dashboards and detailed monthly reports showing exactly where your budget goes.",
                   },
                 ].map((benefit, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                  <motion.div
+                    key={index}
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <motion.div
+                      className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0"
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       <CheckCircle className="w-4 h-4 text-white" />
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="font-bold text-black mb-2">
                         {benefit.title}
                       </h3>
                       <p className="text-gray-600">{benefit.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-gradient-to-br from-blue-600/10 to-blue-600/5 rounded-2xl p-8 border border-gray-200">
+            <motion.div
+              className="bg-gradient-to-br from-blue-600/10 to-blue-600/5 rounded-2xl p-8 border border-gray-200"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={fadeInRight}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-black mb-4">
                   Ready to Dominate Meta Advertising?
@@ -577,31 +771,48 @@ export default function FullServiceMetaAgency() {
                   "Custom campaign strategy",
                   "ROI projection model",
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center text-gray-700">
+                  <motion.div
+                    key={index}
+                    className="flex items-center text-gray-700"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
                     <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
                     {item}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-              <a
+
+              <motion.a
                 // href={getCalendlyLink()}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <button className="btn-indigo">Get Your Free Meta Audit</button>
-              </a>
+              </motion.a>
+
               <div className="text-center text-gray-500 text-sm mt-4">
                 No commitment required • 100% confidential
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <div className={"bg-indigo-950"}>
+      <motion.div
+        className="bg-indigo-950"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <ContactSection />
-      </div>
+      </motion.div>
     </div>
   );
 }

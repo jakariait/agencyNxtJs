@@ -1,6 +1,8 @@
 import Header from "@/components/header";
 import React from "react";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 
 export default function PublicLayout({ children }) {
@@ -10,7 +12,8 @@ export default function PublicLayout({ children }) {
 
       {children}
       <Footer />
-
+      <WhatsAppButton/>
+      <ScrollToTop/>
     </>
   );
 }
