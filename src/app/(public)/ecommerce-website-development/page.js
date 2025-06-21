@@ -8,7 +8,6 @@ import MernCommerceFeatures from "@/components/MernCommerceFeatures";
 import DemoAccessSection from "@/components/DemoAccessSection";
 import ContactSection from "@/components/ContactSection";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
-import { motion } from "framer-motion";
 
 const Page = () => {
   return (
@@ -31,8 +30,6 @@ const Page = () => {
         <CallOrWhatsApp />
       </div>
       <DemoAccessSection />
-      <ContactSection />
-
       <ContactSection />
     </div>
   );
