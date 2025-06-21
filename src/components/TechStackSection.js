@@ -3,6 +3,7 @@
 import { Code, Server, Database, Globe } from "lucide-react";
 import FloatingShapes from "@/components/FloatingShapes";
 import { motion } from "framer-motion";
+import React from "react";
 
 const stack = [
   {
@@ -40,7 +41,8 @@ const TechStackSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          Powered by the <span className="text-green-400">MERN Stack</span>
+          Powered by the MERN Stack
+          <span className="block h-1 w-24 bg-indigo-600 rounded mt-2 mx-auto"></span>
         </motion.h2>
 
         <motion.p
@@ -53,7 +55,7 @@ const TechStackSection = () => {
           We build high-performance, scalable web applications using MongoDB, Express.js, React, and Node.js — a full-stack JavaScript solution trusted by top startups and enterprises.
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-left">
           {stack.map((item, idx) => (
             <motion.div
               key={idx}

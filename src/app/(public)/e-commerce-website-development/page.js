@@ -4,6 +4,8 @@ import EcomHeroSection from "@/components/EcomHeroSection";
 import AboutEcommerceSection from "@/components/AboutEcommerceSection";
 import TechStackSection from "@/components/TechStackSection";
 import CompareMernSection from "@/components/CompareMernSection";
+import MernCommerceFeatures from "@/components/MernCommerceFeatures";
+import DemoAccessSection from "@/components/DemoAccessSection";
 
 const Page = () => {
   return (
@@ -13,7 +15,8 @@ const Page = () => {
       <TechStackSection/>
       <CompareMernSection/>
       <EcommerceFeatures/>
-
+      <MernCommerceFeatures/>
+      <DemoAccessSection/>
     </div>
   );
 };

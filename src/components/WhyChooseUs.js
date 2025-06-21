@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 max-w-6xl mx-auto px-4">
         {whyUs.map((item, index) => {
           const Icon = item.icon;
           return (
@@ -80,12 +80,14 @@ const WhyChooseUs = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               custom={index + 2} // delay after heading and paragraph
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
             >
               <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-indigo-600 text-white shadow-md">
                 <Icon className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{item.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                {item.title}
+              </h3>
               <p className="text-sm text-gray-600">{item.desc}</p>
             </motion.div>
           );

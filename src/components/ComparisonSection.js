@@ -69,7 +69,7 @@ export default function ComparisonSection() {
           <span className="text-white font-semibold">{getBrandName()}</span>.
         </motion.p>
 
-        <div className="grid md:grid-cols-2 gap-10 text-left">
+        <div className="grid md:grid-cols-2 gap-4 text-left">
           {/* Other Agencies */}
           <motion.div
             className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow border border-red-300/20"

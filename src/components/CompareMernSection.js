@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import FloatingShapes from "@/components/FloatingShapes";
 import CallOrWhatsApp from "@/components/CallOrWhatsApp";
 import WhyChooseUs from "@/components/WhyChooseUs";
+
 const quixtaPoints = [
   "Full design control",
   "Build anything from scratch",
@@ -32,7 +33,7 @@ const quixtaPoints = [
   "Integrated into app flow",
   "Large JS ecosystem",
   "Abundant developers",
-  "Long-term dev partnership possible"
+  "Long-term dev partnership possible",
 ];
 
 const otherAgencyPoints = [
@@ -62,39 +63,42 @@ const otherAgencyPoints = [
   "Often not available natively",
   "Larger but plugin-reliant",
   "Easier to find but less flexibility",
-  "Usually one-time dev support"
+  "Usually one-time dev support",
 ];
 
-
-console.log(quixtaPoints.length);         // 26
-console.log(otherAgencyPoints.length);    // 26
-
-// Animation variants for fade-in and slide-up
+// Animation variant
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: (custom) => ({
+  visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: custom * 0.15,
-      duration: 0.6,
-      ease: "easeOut",
+      delay: i * 0.05,
+      duration: 0.4,
     },
   }),
 };
 
 export default function CompareMernSection() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleQuixtaPoints = showAll ? quixtaPoints : quixtaPoints.slice(0, 5);
+  const visibleOtherPoints = showAll
+    ? otherAgencyPoints
+    : otherAgencyPoints.slice(0, 5);
+
   return (
-    <section className="relative py-24  text-white overflow-hidden">
+    <section className="relative pt-10 text-white overflow-hidden">
       <FloatingShapes />
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        {/* Title */}
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-4 leading-snug"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
-          custom={-1} // Negative delay to show heading first
+          custom={-1}
         >
           Why Would You Want to{" "}
           <span className="text-pink-400">Settle for Less?</span>
@@ -105,7 +109,7 @@ export default function CompareMernSection() {
           className="text-lg text-purple-200 mb-14"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
           custom={0}
         >
@@ -113,20 +117,14 @@ export default function CompareMernSection() {
           <span className="text-white font-semibold">MERN Stack</span>.
         </motion.p>
 
+        {/* Comparison Grid */}
         <div className="grid md:grid-cols-2 gap-10 text-left">
-          {/* Other Agencies */}
+          {/* Other Tech */}
           <motion.div
-            className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow border border-red-300/20"
+            className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-xl border border-red-300/20"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15,
-                },
-              },
-            }}
+            viewport={{ once: true }}
           >
             <div className="flex items-center mb-5">
               <ThumbsDown className="w-7 h-7 text-red-400 mr-3" />
@@ -135,12 +133,15 @@ export default function CompareMernSection() {
               </h3>
             </div>
             <ul className="space-y-4 mt-4">
-              {otherAgencyPoints.map((item, idx) => (
+              {visibleOtherPoints.map((item, idx) => (
                 <motion.li
                   key={idx}
                   className="text-red-100 border-l-4 border-red-500 pl-4"
-                  custom={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                   variants={fadeInUp}
+                  custom={idx}
                 >
                   {item}
                 </motion.li>
@@ -148,33 +149,27 @@ export default function CompareMernSection() {
             </ul>
           </motion.div>
 
-          {/* Quixta */}
+          {/* MERN */}
           <motion.div
-            className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow border border-green-300/20"
+            className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-green-300/20"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15,
-                },
-              },
-            }}
+            viewport={{ once: true }}
           >
             <div className="flex items-center mb-5">
               <ThumbsUp className="w-7 h-7 text-green-400 mr-3" />
-              <h3 className="text-2xl font-semibold text-white">
-                MERN Stack
-              </h3>
+              <h3 className="text-2xl font-semibold text-white">MERN Stack</h3>
             </div>
             <ul className="space-y-4 mt-4">
-              {quixtaPoints.map((item, idx) => (
+              {visibleQuixtaPoints.map((item, idx) => (
                 <motion.li
                   key={idx}
                   className="text-green-100 border-l-4 border-green-400 pl-4"
-                  custom={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                   variants={fadeInUp}
+                  custom={idx}
                 >
                   {item}
                 </motion.li>
@@ -182,19 +177,22 @@ export default function CompareMernSection() {
             </ul>
           </motion.div>
         </div>
-      </div>
-      <div className={"mt-10"}>
-        <WhyChooseUs/>
 
+        {/* Button */}
+        <motion.div
+          className="mt-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <button onClick={() => setShowAll(!showAll)} className="btn-indigo">
+            {showAll ? "Show Less" : "See More Comparisons"}
+          </button>
+        </motion.div>
       </div>
-
       <div className="mt-10 -mb-15">
         <CallOrWhatsApp />
       </div>
-
-
-
-
     </section>
   );
 }

@@ -106,7 +106,7 @@ export default function HeroSection() {
               viewport={{ once: false, amount: 0.3 }}
               custom={4}
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 cursor-pointer">
+              <button className="btn-indigo">
                 <span className="flex items-center">
                   Start Your Project
                   <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
