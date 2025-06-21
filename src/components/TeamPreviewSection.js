@@ -9,7 +9,7 @@ import { Facebook, Linkedin, Globe } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Jakaria Rahman",
+    name: "Jakaria",
     role: "Co-Founder & Tech Lead",
     image: "/jakaria.jpeg",
     bio: "Drives the technical vision of the company and leads the development team with hands-on expertise in modern web technologies.",

@@ -77,7 +77,7 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section className="relative  px-2 overflow-hidden py-20">
+    <section className="relative  px-4 overflow-hidden py-20">
       <FloatingShapes />
 
       {/* Section Heading */}

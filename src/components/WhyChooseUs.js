@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
           return (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-lg p-6 text-center transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
+              className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl shadow-lg p-6 text-center transition-transform duration-300 hover:-translate-y-1 "
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"

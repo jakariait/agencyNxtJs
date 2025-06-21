@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FloatingShapes from "@/components/FloatingShapes";
+import { getBrandName } from "@/utils/brand";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -44,7 +45,7 @@ const AboutUsSection = () => {
           custom={1}
         >
           <p>
-            At <span className="text-purple-400 font-semibold">[Your Agency Name]</span>, we don’t just deliver services — we deliver results. We are a full-service digital agency passionate about building, scaling, and optimizing brands for the digital era. From stunning websites to conversion-driven eCommerce platforms and targeted marketing campaigns — we provide end-to-end solutions that generate measurable growth.
+            At <span className="text-purple-400 font-semibold">{getBrandName()}</span>, we don’t just deliver services — we deliver results. We are a full-service digital agency passionate about building, scaling, and optimizing brands for the digital era. From stunning websites to conversion-driven eCommerce platforms and targeted marketing campaigns — we provide end-to-end solutions that generate measurable growth.
           </p>
 
           <p>

@@ -5,7 +5,7 @@ import { getBrandLogo, getBrandName, getWhatsAppLink } from "@/utils/brand";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "E-commerce Website", href: "/" },
+  { name: "E-commerce Website", href: "/e-commerce-website-development" },
   { name: "Landing Page", href: "/" },
   { name: "Meta Marketing", href: "/meta" },
   { name: "Pricing", href: "/" },
